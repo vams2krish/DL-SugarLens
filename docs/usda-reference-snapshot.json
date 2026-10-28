@@ -1,0 +1,96 @@
+{
+  "retrievedOn": "2026-10-28",
+  "source": "USDA FoodData Central API, SR Legacy, nutrient 269 (total sugars), g per 100 g",
+  "foods": [
+    {
+      "fdcId": 171688,
+      "description": "Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)",
+      "sugar": 10.4
+    },
+    {
+      "fdcId": 171705,
+      "description": "Avocados, raw, all commercial varieties",
+      "sugar": 0.66
+    },
+    {
+      "fdcId": 173944,
+      "description": "Bananas, raw",
+      "sugar": 12.2
+    },
+    {
+      "fdcId": 170379,
+      "description": "Broccoli, raw",
+      "sugar": 1.7
+    },
+    {
+      "fdcId": 169975,
+      "description": "Cabbage, raw",
+      "sugar": 3.2
+    },
+    {
+      "fdcId": 170393,
+      "description": "Carrots, raw",
+      "sugar": 4.74
+    },
+    {
+      "fdcId": 169986,
+      "description": "Cauliflower, raw",
+      "sugar": 1.91
+    },
+    {
+      "fdcId": 168409,
+      "description": "Cucumber, with peel, raw",
+      "sugar": 1.67
+    },
+    {
+      "fdcId": 174683,
+      "description": "Grapes, red or green (European type, such as Thompson seedless), raw",
+      "sugar": 15.5
+    },
+    {
+      "fdcId": 167746,
+      "description": "Lemons, raw, without peel",
+      "sugar": 2.5
+    },
+    {
+      "fdcId": 169910,
+      "description": "Mangos, raw",
+      "sugar": 13.7
+    },
+    {
+      "fdcId": 169097,
+      "description": "Oranges, raw, all commercial varieties",
+      "sugar": 9.35
+    },
+    {
+      "fdcId": 170108,
+      "description": "Peppers, sweet, red, raw",
+      "sugar": 4.2
+    },
+    {
+      "fdcId": 169124,
+      "description": "Pineapple, raw, all varieties",
+      "sugar": 9.85
+    },
+    {
+      "fdcId": 169291,
+      "description": "Squash, summer, zucchini, includes skin, raw",
+      "sugar": 2.5
+    },
+    {
+      "fdcId": 167762,
+      "description": "Strawberries, raw",
+      "sugar": 4.89
+    },
+    {
+      "fdcId": 170457,
+      "description": "Tomatoes, red, ripe, raw, year round average",
+      "sugar": 2.63
+    },
+    {
+      "fdcId": 167765,
+      "description": "Watermelon, raw",
+      "sugar": 6.2
+    }
+  ]
+}
