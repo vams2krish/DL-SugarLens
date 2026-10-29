@@ -1,0 +1,24 @@
+{
+  "version": "1.1.0",
+  "testedAt": "2026-10-29T02:35:33.232Z",
+  "target": "http://127.0.0.1:4173",
+  "browser": "156.0.4314.50",
+  "results": [
+    "Real banana photo → MobileNet → confirmation → 200 g portion → 24.40 g sugar",
+    "Weighted portion comparison, invalid input, and real CSV export",
+    "Expanded USDA food library search, selection, and empty result",
+    "Real COCO-SSD multi-item mode returns a banana bounding box",
+    "Actual two-object photo produces separate bounding boxes and confirmation buttons",
+    "Both real model weights saved to IndexedDB",
+    "Full app reload and actual single-photo inference with network disabled",
+    "Actual multi-item inference loads saved COCO-SSD offline",
+    "390 px mobile layout has no horizontal overflow",
+    "Unreadable uploads clear stale results and recover",
+    "Offline missing-model recovery preserves manual lookup",
+    "No unhandled browser errors; portion removal and clear work"
+  ],
+  "limitations": [
+    "Small curated demo, not a held-out accuracy benchmark",
+    "No physical phone camera or signed native binary certification"
+  ]
+}

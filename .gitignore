@@ -7,3 +7,7 @@ playwright-report/
 .openai/*
 !.openai/hosting.json
 *.tar.gz
+
+android/
+ios/
+*.webm

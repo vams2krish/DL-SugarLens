@@ -1,0 +1,56 @@
+{
+  "retrievedOn": "2026-10-28",
+  "source": "USDA FDC API, SR Legacy nutrient 269 g/100g",
+  "foods": [
+    {
+      "fdcId": 171711,
+      "description": "Blueberries, raw",
+      "sugar": 9.96
+    },
+    {
+      "fdcId": 169988,
+      "description": "Celery, raw",
+      "sugar": 1.34
+    },
+    {
+      "fdcId": 168153,
+      "description": "Kiwifruit, green, raw",
+      "sugar": 8.99
+    },
+    {
+      "fdcId": 170000,
+      "description": "Onions, raw",
+      "sugar": 4.24
+    },
+    {
+      "fdcId": 169928,
+      "description": "Peaches, yellow, raw",
+      "sugar": 8.39
+    },
+    {
+      "fdcId": 169118,
+      "description": "Pears, raw",
+      "sugar": 9.75
+    },
+    {
+      "fdcId": 169949,
+      "description": "Plums, raw",
+      "sugar": 9.92
+    },
+    {
+      "fdcId": 170026,
+      "description": "Potatoes, flesh and skin, raw",
+      "sugar": 0.82
+    },
+    {
+      "fdcId": 167755,
+      "description": "Raspberries, raw",
+      "sugar": 4.42
+    },
+    {
+      "fdcId": 168462,
+      "description": "Spinach, raw",
+      "sugar": 0.42
+    }
+  ]
+}

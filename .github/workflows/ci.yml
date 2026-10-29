@@ -14,3 +14,18 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npx playwright install --with-deps chromium
+      - name: Verify the production photo-to-result flow
+        run: |
+          npm run preview -- --port 4173 > /tmp/sugarlens-preview.log 2>&1 &
+          npm run test:e2e
+      - name: Preserve product verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sugarlens-product-verification
+          path: |
+            docs/showcase-*.png
+            docs/verification*.json
+            docs/verification-failure.png

@@ -17,9 +17,26 @@ export const foods = [
  ['Red bell pepper','🫑',4.2,'170108',['bell pepper']],
  ['Zucchini','🥒',2.5,'169291',['zucchini','courgette']],
  ['Cabbage','🥬',3.2,'169975',['head cabbage']],
- ['Mango','🥭',13.7,'169910',[]]
+ ['Mango','🥭',13.7,'169910',[]],
+ ['Blueberry','🫐',9.96,'171711',[]],
+ ['Raspberry','🍓',4.42,'167755',[]],
+ ['Pear','🍐',9.75,'169118',[]],
+ ['Peach','🍑',8.39,'169928',[]],
+ ['Plum','🟣',9.92,'169949',[]],
+ ['Kiwi','🥝',8.99,'168153',[]],
+ ['Spinach','🥬',0.42,'168462',[]],
+ ['Celery','🥬',1.34,'169988',[]],
+ ['Onion','🧅',4.24,'170000',[]],
+ ['Potato','🥔',0.82,'170026',[]]
 ].map(([name,emoji,sugar,fdc,labels])=>({name,emoji,sugar,fdc,labels}));
 export function candidates(predictions) {
  return foods.flatMap(food=>{const match=predictions.find(p=>food.labels.some(label=>p.className.toLowerCase().split(',').map(s=>s.trim()).includes(label.toLowerCase())));return match&&match.probability>=0.1?[{...food,probability:match.probability}]:[]}).sort((a,b)=>b.probability-a.probability);
 }
-export function servingSugar(sugar,grams) {if(!Number.isFinite(grams)||grams<=0||grams>5000) return null;return sugar*grams/100;}
+export function servingSugar(sugar,grams) {if(!Number.isFinite(grams)||grams<1||grams>5000) return null;return sugar*grams/100;}
+
+const detectorNames={apple:'Apple',banana:'Banana',orange:'Orange',broccoli:'Broccoli',carrot:'Carrot'};
+export function detectedFoods(predictions) {
+ return predictions.filter(p=>p.score>=0.5&&detectorNames[p.class]).map(p=>({
+  ...foods.find(f=>f.name===detectorNames[p.class]),probability:p.score,bbox:p.bbox
+ }));
+}

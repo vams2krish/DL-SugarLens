@@ -1,0 +1,6 @@
+{
+  "appId": "com.sugarlens.app",
+  "appName": "SugarLens",
+  "webDir": "dist",
+  "server": { "androidScheme": "https" }
+}
