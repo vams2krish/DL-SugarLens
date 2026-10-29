@@ -118,7 +118,7 @@ The production build precaches its versioned app shell, JavaScript modules, loca
 
 Uploaded photos are decoded into an in-memory canvas, resized to a maximum 1,280 px edge for inference, and never uploaded or persisted. Inputs are limited to JPG/PNG/WebP, 12 MB, and 40 megapixels. Convert unsupported formats such as HEIC first. New or invalid uploads clear previous photo results. The portion list stores only food IDs and entered weights in `sessionStorage`; clear it explicitly or close the tab. No account database, photo history or analytics is included.
 
-Initial model downloads use TensorFlow/Google model hosting, which receives ordinary network metadata. Font files are bundled locally. New app versions show an update action; activating it preserves the current tab's portion list. Model removal clears the saved recognition weights without deleting food data or the app shell.
+Initial model downloads use TensorFlow/Google model hosting, which receives ordinary network metadata. Font files are bundled locally. Online navigation refreshes through the host so its authentication redirects remain valid; offline navigation reconstructs the saved shell response without redirect or compression metadata. A dedicated service-worker regression test covers this hosted reload path. New app versions show an update action; activating it preserves the current tab's portion list. Model removal clears the saved recognition weights without deleting food data or the app shell.
 
 ## Mobile and native packaging
 

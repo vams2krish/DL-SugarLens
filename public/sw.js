@@ -9,6 +9,16 @@ self.addEventListener('fetch',event=>{
  // Static resources are selected at build time. Ignore Vary: Origin because module
  // requests and install-time fetches use different Origin headers in some browsers.
  const cached=request=>caches.open(CACHE).then(cache=>cache.match(request,{ignoreVary:true}));
- if(event.request.mode==='navigate'){event.respondWith(cached(new URL('./index.html',self.registration.scope).href).then(hit=>hit||fetch(event.request)));return;}
+ if(event.request.mode==='navigate'){
+  // Some authenticated hosts redirect /index.html. Cached redirected responses
+  // are invalid for navigation in some browsers; use a fresh Response offline.
+  const fallback=async()=>{
+   const hit=await cached(new URL('./index.html',self.registration.scope).href);
+   if(!hit)return Response.error();
+   const headers=new Headers(hit.headers);headers.delete('content-encoding');headers.delete('content-length');
+   return new Response(hit.body,{status:hit.status,statusText:hit.statusText,headers});
+  };
+  event.respondWith(fetch(event.request).catch(fallback));return;
+ }
  event.respondWith(cached(event.request).then(hit=>hit||fetch(event.request)));
 });
