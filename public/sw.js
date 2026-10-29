@@ -1,6 +1,12 @@
 const CACHE='__CACHE__';
 const PRECACHE=/*__PRECACHE__*/[];
-self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(PRECACHE))));
+self.addEventListener('install',event=>event.waitUntil((async()=>{
+ const sameBuild=(await caches.keys()).includes(CACHE);
+ const cache=await caches.open(CACHE);await cache.addAll(PRECACHE);
+ // A worker-only repair may activate immediately: the application assets are
+ // identical. Builds with new assets still wait for the in-app Update action.
+ if(sameBuild)await self.skipWaiting();
+})()));
 self.addEventListener('message',event=>{if(event.data==='ACTIVATE_UPDATE')self.skipWaiting();});
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('sugarlens-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
